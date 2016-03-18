@@ -62,7 +62,7 @@
 ;; Consumes a number to give a function which gives
 ;; the nth term of the geometric distribution with
 ;; success probability p
-(define (geo p)
+(define (geo-dist p)
   (λ(term)
     (if (> term 0)
         (* (expt (- 1 p) (- term 1)) p) (error "Term for geometric distribution must be greater than 0 -- GEO-DIST"))))
@@ -71,7 +71,7 @@
 ;; Consumes a number to give a function which gives
 ;; the nth term of the binomial distribution with
 ;; success probability p
-(define (bin n p)
+(define (bin-dist n p)
   (λ(term)
     (cond
       [(< term 0) (error "Term for binomial distribution cannot be less than 0 -- BIN-DIST")]
@@ -85,7 +85,7 @@
 ;; Consumes a number to give a function which gives
 ;; the nth term of the poisson distribution with
 ;; average success of lam
-(define (poi lam)
+(define (poi-dist lam)
   (λ(term)
     (cond
       [(< term 0) (error "Term for binomial distribution cannot be less than 0 -- POI-DIST")]
