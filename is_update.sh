@@ -5,7 +5,7 @@
 
 set -eu
 
-FIND_ARGS=". -maxdepth 1 -name $1 -mtime -1s"
+FIND_ARGS=". -maxdepth 1 -name $1 -mtime -2s"
 
 while [ 1 ]; do
   FILE_NAME=`find $FIND_ARGS`
