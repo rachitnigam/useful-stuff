@@ -1,0 +1,11 @@
+==== On the server ====
+1. Install openssh-server (linux).
+2. Run `sudo service ssh start`.
+3. Download ngrok from the website and unzip. Do _not_ install from apt-get.
+4. Install authtoken from ngrok. Login to get the authtoken.
+5. Add the public ssh key for the client machine to `.ssh/known_host` on the server.
+6. From the downloaded `ngrok` exec, run `ngrok tcp 22` to run the server.
+7. To connect, use the following address with `ssh`: `<user_on_server>@0.tcp.ngrok.io -p <port_after_:>`
+
+==== On the client ====
+1. Run ssh after configuring the server.
