@@ -1,0 +1,10 @@
+To setup ssh access into a VM that is running on your machine:
+
+1. Setup the VM instance.
+2. In the network settings, click on "port forwarding".
+3. In the rules, add the host port that you want to have forwarded to the VM.
+4. In the rules, add the guest port (in this case, the VM instance) to be 22 (the default ssh port).
+5. That's it! You can now do two things:
+  - On the host the you can connect to the VM using ssh and the port that you put in.
+  - From a remote machine, you can ssh using the port that you put. This will ssh you directly into
+    the VM instance.

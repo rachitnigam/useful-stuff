@@ -1,0 +1,7 @@
+Hamachi is great if you want to run a VPN without paying for a server:
+
+1. Install the clients on both the machines.
+2. Add the machines to a new network.
+3. Hamachi will assign both the machines static IPs that can be used to ssh into the machines.
+4. ( WARNING ) On windows, once you install hamachi, you will have to RESTART the machine otherwise
+  the Hamachi adapter will not be properly configured.
