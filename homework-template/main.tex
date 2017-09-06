@@ -1,0 +1,48 @@
+
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\usepackage{amsmath,amsfonts,graphicx,multicol,color}
+\usepackage{url}
+
+\newcommand{\todo}{\textcolor{red}{TODO}}
+\newcommand{\name}{Rachit Nigam}
+\newcommand{\assignment}{Name of the assignment}
+\newcommand{\makespace}{\vspace{10pt}}
+
+% Generate the header for each page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Define the header
+\lhead{\assignment}
+\rhead{\name}
+
+% Define the footer
+\rfoot{Page \thepage}
+\cfoot{}
+
+\begin{document}
+
+% Title on the first page
+\begin{center}
+  \hrule
+  \makespace{}
+  \huge{\assignment} \\
+  \makespace{}
+  \large{\name}
+  \makespace{}
+  \hrule
+  \makespace{}
+\end{center}
+\thispagestyle{empty}
+
+this is on the first page
+\todo
+
+\newpage
+this is on a new page
+
+\end{document}
