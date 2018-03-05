@@ -1,0 +1,33 @@
+vim: set ft=markdown:
+
+03/05/2018
+
+Fixing partition issues
+----------------------
+
+- This morning, my laptop refused to hibernate properly; everytime I closed
+  the lid, the device completely shut down.
+- On a separate note, about a month ago, I resized my home partition by
+  moving the swap partition. Since after the move, every startup would hang
+  for a while saying that a start job is running.
+
+The Issue
+---------
+
+- The issue was that that swap partition information in `/etc/fstab` and
+  `/etc/default/grub` was no updated properly by GParted.
+- To figure the issue out, I ran `blkid` which give the UUID for the swap
+  partition. I then ran `grep resume /boot/grub/grub.cfg`. The UUIDs for
+  swap were different. I updated `/etc/defaults/grub` with the correct
+  UUID and ran `update-grub` to regenerate boot information.
+- This didn't solve the problem. Eventually, I found that the swap information
+  in `/etc/fstab` was also incorrect. Turns out that this file overwrites the
+  information found by `systemd` at boot time.
+- On updating `/etc/fstab` and rebooting, both the problems were solved.
+
+
+References
+----------
+
+[1] Similar problems (fstab update): https://bbs.archlinux.org/viewtopic.php?id=201816
+[2] `blkid`: Get UUIDs for the various partitions.
